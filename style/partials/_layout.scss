@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.align {
+    align-items: center;
+}
+
+.gap-lg {
+    gap: 40px;
+}
