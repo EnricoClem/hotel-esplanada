@@ -3,8 +3,31 @@
     flex-wrap: wrap;
 }
 
+.row-col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.col-3 {
+    width: calc(100% / 4);
+}
+
+.col-6 {
+    width: calc(100% / 2);
+}
+
+
 .between {
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: end;
 }
 
 .align {
@@ -13,4 +36,23 @@
 
 .gap-lg {
     gap: 40px;
+}
+
+.gap-md {
+    gap: 25px;
+}
+
+.gap-sm {
+    gap: 8px;
+}
+
+// TEXT
+
+.caption {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.text-center {
+    text-align: center;
 }
