@@ -1,11 +1,32 @@
 <script>
+import { useRoute } from "vue-router";
+import { RouterLink } from "vue-router";
+import { computed } from "vue";
+
 export default {
-    
+    setup() {
+    const route = useRoute();
+
+    const headerClass = computed(() => {
+      const path = route.path;
+      if (path === "/") {
+        return "home-adaptation";
+      } else {
+        return "not-home";
+      }
+    });
+
+    const isActive = (linkPath) => {
+      return route.path === linkPath ? 'underline-current-page' : 'underline';
+    };
+
+    return { headerClass, isActive };
+  },
 }
 </script>
 
 <template>
-    <footer>
+    <footer :class="headerClass">
         <div class="footer-container">
             <div class="row align">
                 <!-- TITLE -->
@@ -56,6 +77,7 @@ export default {
     width: 100%;
     padding: 20px 40px;
     color: variables.$color-g;
+    height: 120px;
 }
 
 .social-foot {
@@ -112,6 +134,28 @@ export default {
 
 .hover-container-wtsp:hover .social-foot {
     display: none;
+}
+
+// HOME RULE
+
+.home-adaptation footer {
+    position: relative;
+}
+
+.home-adaptation .footer-container {
+    background-color: variables.$color-shade;
+    width: 100%;
+    color: variables.$color-w;
+    position: absolute;
+    bottom: 0px;
+}
+
+.home-adaptation .social-foot {
+    filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
+}
+
+.home-adaptation .social-foot-hover {
+    filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
 }
 
 </style>
