@@ -79,6 +79,7 @@ export default {
     background-color: variables.$color-w;
     padding: 20px 40px;
     height: 100px;
+    z-index: 999;
 }
 
 .header-logo {

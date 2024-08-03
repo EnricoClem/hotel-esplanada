@@ -1,19 +1,12 @@
 <script>
-import AppBackground from '../components/AppBackground.vue'
-
 export default {
-    components: {
-    AppBackground,
-  }
 }
 </script>
 
 <template>
 
     <div class="app-container">
-        
-        <AppBackground></AppBackground>
-    
+            
         <section>
             <div class="row">
                 <div class="col-6 text-welcome gap-md row-col">

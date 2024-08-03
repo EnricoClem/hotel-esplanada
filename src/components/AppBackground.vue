@@ -11,9 +11,9 @@ export default {
 <template>
     <section class="parallax-background" id="scene">
 
-        <img class="layer" data-depth="-0.2" src="../assets/background-layer-2.png" alt="">
-        <img class="layer" data-depth="-0.6" src="../assets/background-layer-3.png" alt="">
-        <img class="layer" data-depth="-1.2" src="../assets/background-layer-4.png" alt="">
+        <img class="layer" data-depth="-0.1" src="../assets/background-layer-2.png" alt="">
+        <img class="layer" data-depth="-0.3" src="../assets/background-layer-3.png" alt="">
+        <img class="layer" data-depth="-0.5" src="../assets/background-layer-4.png" alt="">
 
     </section>
 </template>
