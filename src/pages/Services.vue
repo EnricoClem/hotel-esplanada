@@ -1,14 +1,27 @@
 <script>
+import AppBackground from '../components/AppBackground.vue'
+
 export default {
-    
+    components: {
+    AppBackground,
+  }
 }
 </script>
 
 <template>
-    <div>
-        <h1>Services</h1>
+
+    <div class="app-container">
+        
+        <AppBackground></AppBackground>
+    
+        <div>
+            <h1>Services</h1>
+        </div>
+
     </div>
+
 </template>
 
 <style lang="scss">
+@use '../style/general.scss';
 </style>

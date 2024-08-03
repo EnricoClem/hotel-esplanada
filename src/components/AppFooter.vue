@@ -35,7 +35,7 @@ export default {
                     <p class="caption">© Copyright  2021 Grand Hotel Esplanada. All rights reserved.</p>
                 </div>
                 <!-- CONTACT INFO -->
-                <div class="col-6 row-col gap-sm">
+                <div class="col-6 row-col gap-xsm">
                     <p class="caption text-center">Via delle Dune 6 - 30020 Bibione Pineda VE Italy</p>
                     <p class="text-center gap-md row justify-center">
                         <a href="mailto:info@esplanada.it">info@esplanada.it</a>
@@ -77,7 +77,7 @@ export default {
     width: 100%;
     padding: 20px 40px;
     color: variables.$color-g;
-    height: 120px;
+    height: 108px;
 }
 
 .social-foot {

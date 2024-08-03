@@ -1,3 +1,10 @@
+.app-container {
+    width: 100%;
+    height: calc(100vh - 208px);
+    overflow: hidden;
+    position: relative;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +50,11 @@
 }
 
 .gap-sm {
-    gap: 8px;
+    gap: 10px;
+}
+
+.gap-xsm {
+    gap: 4px;
 }
 
 // TEXT
@@ -55,4 +66,14 @@
 
 .text-center {
     text-align: center;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.paragraph {
+    font-size: 16px;
+    font-weight: 400;
 }

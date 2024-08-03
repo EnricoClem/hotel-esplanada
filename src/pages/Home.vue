@@ -23,7 +23,7 @@ export default {
 }
 
 .home-logo {
-    width: 500px;
+    width: 30%;
     margin: auto;
     filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
 }

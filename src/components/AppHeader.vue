@@ -78,6 +78,7 @@ export default {
     width: 100%;
     background-color: variables.$color-w;
     padding: 20px 40px;
+    height: 100px;
 }
 
 .header-logo {
