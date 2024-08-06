@@ -1,5 +1,6 @@
 $color-w: white;
-$color-b: black;
+$color-b: #1a1a1a;
+$filter-b: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(2966%) hue-rotate(61deg) brightness(94%) contrast(80%);
 $color-g: rgb(205, 205, 205);
 $color-shade: rgba(0, 0, 0, 0.500);
 $color-brand: rgb(215, 164, 10);

@@ -26,17 +26,25 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     width: 130%;
-    height: 100%;
+    height: 150%;
     margin-left: -15%;
+    margin-top: -15%;
     position: absolute;
     z-index: -999;
+    overflow: visible;
+    display: flex;
 }
 
 .layer {
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    overflow: visible;
+}
+
+.home-adaptation .parallax-background {
+    display: none;
 }
 
 </style>

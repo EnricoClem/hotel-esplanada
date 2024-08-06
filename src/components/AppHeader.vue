@@ -80,9 +80,11 @@ export default {
     padding: 20px 40px;
     height: 100px;
     z-index: 999;
+    color: variables.$color-b;
 }
 
 .header-logo {
+    filter: variables.$filter-b;
     height: 60px;
 }
 
