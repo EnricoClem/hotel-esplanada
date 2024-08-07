@@ -28,7 +28,7 @@ export default {
 <template>
     <header :class="headerClass">
         <div class="header-container">
-            <div class="row between align">
+            <nav class="row between align" :dir="$i18n.locale == 'ar'?'rtl':'ltr'">
                 <!-- LOGO + home button -->
                 <div>
                     <RouterLink to="/">
@@ -36,35 +36,35 @@ export default {
                     </RouterLink>
                 </div>
                 <!-- NAVIGATION BAR -->
-                <nav class="row gap-lg">
+                <div class="row gap-lg">
                     <RouterLink to="/welcome" class="route-btn align">
-                        <p>BENVENUTI</p>
+                        <p>{{ $t('welcome') }}</p>
                         <div :class="isActive('/welcome')"></div>
                     </RouterLink>
                     <a class="route-btn align" href="https://be.bookingexpert.it/book/simple/step1?hotel=15184&lang=it&nsid=4dfd743e-a1b8-4634-96fc-e5993c294fe0">
-                        <p>PRENOTA ONLINE</p>
+                        <p>{{ $t('booking') }}</p>
                         <div class="underline"></div>
                     </a>
                     <RouterLink to="/rooms" class="route-btn align">
-                        <p>LE CAMERE</p>
+                        <p>{{ $t('room') }}</p>
                         <div :class="isActive('/rooms')"></div>
                     </RouterLink>
                     <RouterLink to="/services" class="route-btn align">
-                        <p>I NOSTRI SERVIZI</p>
+                        <p>{{ $t('service') }}</p>
                         <div :class="isActive('/services')"></div>
                     </RouterLink>
                     <RouterLink to="/info" class="route-btn align">
-                        <p>INFO</p>
+                        <p>{{ $t('info') }}</p>
                         <div :class="isActive('/info')"></div>
                     </RouterLink>
-                </nav>
+                </div>
                 <!-- LANGUAGE SELECTION -->
-                <select name="lang" id="lang">
-                    <option value="it">IT</option>
-                    <option value="en">EN</option>
-                    <option value="de">DE</option>
-                </select>
-            </div>
+                <div class="locale-changer">
+                    <select v-model="$i18n.locale">
+                    <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+                    </select>
+                </div>
+            </nav>
         </div>
     </header>
 </template>

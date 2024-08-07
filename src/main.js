@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import i18n from './i18n'
 
 // Router options
 import { createMemoryHistory, createRouter } from 'vue-router'
@@ -29,4 +30,5 @@ export default router;
 
 createApp(App)
   .use(router)
+  .use(i18n)
   .mount('#app')
