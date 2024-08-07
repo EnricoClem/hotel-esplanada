@@ -20,9 +20,9 @@ export default {
 
         <li class="service-card col-4">
             <div class="service-card-layout" :style="backgroundImageStyle">
-                <p class="secondary-title">{{ item.name }}</p>
+                <p class="secondary-title">{{ $t(item.name) }}</p>
                 <div class="text-box">
-                    <p class="service-description" v-if="item.text !== '' ">{{ item.text }}</p>
+                    <p class="service-description" v-if="item.text !== '' ">{{ $t(item.text) }}</p>
                 </div>
             </div>
         </li>

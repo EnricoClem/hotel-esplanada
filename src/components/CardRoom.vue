@@ -32,9 +32,9 @@ export default {
     <li class="card-room col-4">
         <a href="#" @click.prevent="showPopup(item)">
             <div class="card-room-text">
-                <p class="secondary-title">{{ item.name }}</p>
-                <p class="caption" v-if="item.persons === '1'">Ideale per {{ item.persons }} persona.</p>
-                <p class="caption" v-else>Ideale per {{ item.persons }} persone.</p>
+                <p class="secondary-title">{{ $t(item.name) }}</p>
+                <p class="caption" v-if="item.persons === '1'">{{ $t("rooms-persons-1") }}{{ item.persons }}{{ $t("rooms-persons-2") }}</p>
+                <p class="caption" v-else>{{ $t("rooms-persons-1") }}{{ item.persons }}{{ $t("rooms-persons-3") }}</p>
             </div>
             <div class="card-room-img">
                 <img class="room-cover" :src="`/public/${ item.cover }`" alt="">

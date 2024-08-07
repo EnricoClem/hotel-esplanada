@@ -60,7 +60,7 @@ export default {
                 </div>
                 <!-- LANGUAGE SELECTION -->
                 <div class="locale-changer">
-                    <select v-model="$i18n.locale">
+                    <select v-model="$i18n.locale" class="lang-selection">
                     <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
                     </select>
                 </div>
@@ -92,6 +92,14 @@ export default {
     font-size: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.lang-selection {
+    color: variables.$color-w;
+    border-radius: none;
+    border: solid 1px variables.$color-w;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 2px 0px 2px 5px;
 }
 
 // UNDERLINE ANIMATION

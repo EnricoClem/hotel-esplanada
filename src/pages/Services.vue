@@ -19,7 +19,7 @@ import CardService from '../components/CardService.vue';
     <div class="app-container">
             
         <div class="service-container-overflow row-col">
-            <h1 class="service-title-container title">I nostri servizi</h1>
+            <h1 class="service-title-container title">{{ $t("service-page") }}</h1>
             <ul class="service-container row">
                 <CardService v-for="service in store.allServices" :key="service.id" :item="service"/>
             </ul>

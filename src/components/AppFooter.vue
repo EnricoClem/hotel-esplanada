@@ -50,7 +50,7 @@ export default {
                 <!-- SOCIAL BUTTONS -->
                 <div class="col-3 row justify-end gap-md align">
                     <a href="https://wa.me/+393514454589" class="wtsp-btn row gap-sm hover-container-wtsp">
-                        <p class="caption">Scrivici direttamente <br> su WhatsApp</p>
+                        <p class="caption">{{ $t("whatsapp-1") }}<br>{{ $t("whatsapp-2") }}</p>
                         <img class="social-foot" src="../assets/WTSP-logo-1.svg" />
                         <img class="social-foot-hover" src="../assets/WTSP-logo-2.svg" />
                     </a>
@@ -100,13 +100,13 @@ export default {
 
 .wtsp-btn .social-foot {
     width: 25px;
-    left: 120px;
+    right: 12.5px;
     top: 12.5px;
 }
 
 .wtsp-btn .social-foot-hover {
     width: 25px;
-    left: 120px;
+    right: 12.5px;
     top: 12.5px;
 }
 
