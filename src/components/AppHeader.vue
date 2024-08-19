@@ -1,7 +1,7 @@
 <script>
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 export default {
     setup() {
@@ -20,7 +20,13 @@ export default {
       return route.path === linkPath ? 'underline-current-page' : 'underline';
     };
 
-    return { headerClass, isActive };
+    const isMenuVisible = ref(false);
+
+    const toggleMenu = () => {
+      isMenuVisible.value = !isMenuVisible.value;
+    };
+
+    return { headerClass, isActive, isMenuVisible, toggleMenu };
   },
 }
 </script>
@@ -28,16 +34,26 @@ export default {
 <template>
     <header :class="headerClass">
         <div class="header-container">
-            <nav class="row between align" :dir="$i18n.locale == 'ar'?'rtl':'ltr'">
+            <!-- BURGER BUTTON -->
+            <div class="burger-btn justify-center" @click="toggleMenu">
+                <img class="header-logo" src="../assets/espl-LOGO-01.svg" />
+            </div>
+            <nav class="header-navbar row between align"
+            :dir="$i18n.locale == 'ar' ? 'rtl' : 'ltr'"
+            :class="{ visible: isMenuVisible }">
                 <!-- LOGO + home button -->
-                <div>
+                <div class="logo-home-btn">
                     <RouterLink to="/">
                         <img class="header-logo" src="../assets/espl-LOGO-01.svg" />
                     </RouterLink>
                 </div>
                 <!-- NAVIGATION BAR -->
-                <div class="row gap-lg">
-                    <RouterLink to="/welcome" class="route-btn align">
+                <div class="menu-list row gap-lg">
+                    <RouterLink to="/" class="route-btn home-navbar-btn align" @click="toggleMenu">
+                        <p>HOME</p>
+                        <div :class="isActive('/')"></div>
+                    </RouterLink>
+                    <RouterLink to="/welcome" class="route-btn align" @click="toggleMenu">
                         <p>{{ $t('welcome') }}</p>
                         <div :class="isActive('/welcome')"></div>
                     </RouterLink>
@@ -45,15 +61,15 @@ export default {
                         <p>{{ $t('booking') }}</p>
                         <div class="underline"></div>
                     </a>
-                    <RouterLink to="/rooms" class="route-btn align">
+                    <RouterLink to="/rooms" class="route-btn align" @click="toggleMenu">
                         <p>{{ $t('room') }}</p>
                         <div :class="isActive('/rooms')"></div>
                     </RouterLink>
-                    <RouterLink to="/services" class="route-btn align">
+                    <RouterLink to="/services" class="route-btn align" @click="toggleMenu">
                         <p>{{ $t('service') }}</p>
                         <div :class="isActive('/services')"></div>
                     </RouterLink>
-                    <RouterLink to="/info" class="route-btn align">
+                    <RouterLink to="/info" class="route-btn align" @click="toggleMenu">
                         <p>{{ $t('info') }}</p>
                         <div :class="isActive('/info')"></div>
                     </RouterLink>
@@ -88,6 +104,10 @@ export default {
     height: 60px;
 }
 
+.home-navbar-btn {
+    display: none;
+}
+
 .route-btn {
     font-size: 20px;
     display: flex;
@@ -95,9 +115,9 @@ export default {
 }
 
 .lang-selection {
-    color: variables.$color-w;
+    color: variables.$color-b;
     border-radius: none;
-    border: solid 1px variables.$color-w;
+    border: solid 1px variables.$color-b;
     background-color: rgba(0, 0, 0, 0);
     padding: 2px 0px 2px 5px;
 }
@@ -139,6 +159,83 @@ export default {
 
 .home-adaptation .header-logo {
     filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
+}
+
+.home-adaptation .lang-selection {
+    color: variables.$color-w;
+    border: solid 1px variables.$color-w;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.burger-btn {
+    display: none;
+}
+
+.logo-home-btn {
+    display: block;
+}
+
+.home-navbar-btn {
+    display: none;
+}
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .burger-btn {
+        display: flex;
+    }
+
+    .logo-home-btn {
+        display: none;
+    }
+
+    .header-navbar {
+        flex-direction: column;
+        display: none;
+    }
+
+    .home-adaptation .home-navbar-btn {
+        display: none;
+    }
+
+    .home-navbar-btn {
+        display: flex;
+    }
+    
+    .header-navbar {
+        transition: max-height 1s ease-in-out;
+        overflow: hidden;
+        max-height: 0;
+        position: relative;
+        z-index: 999;
+        &.visible {
+            display: flex;
+            max-height: 600px;
+            background-color: variables.$color-w;
+            padding: 60px;
+            margin-top: 60px;
+            gap: 40px;
+        }
+    }
+
+    .home-adaptation .header-navbar {
+            &.visible {
+                background-color: variables.$color-shade;
+            }
+    }
+    
+    .menu-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .route-btn {
+        width: fit-content;
+    }
+
 }
 
 </style>

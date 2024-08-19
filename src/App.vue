@@ -24,7 +24,17 @@ export default {
         return "app-container";
       }
     });
-    return { containerApp };
+
+    const backgroundApp = computed(() => {
+      const path = route.path;
+      if (path === "/") {
+        return "home-hide";
+      } else {
+        return "";
+      }
+    });
+
+    return { containerApp, backgroundApp };
   },
 }
 
@@ -34,7 +44,7 @@ export default {
 
   <AppHeader></AppHeader>
   <div :class="containerApp">
-    <AppBackground></AppBackground>
+    <AppBackground :class="backgroundApp"></AppBackground>
     <RouterView />
   </div>
   <AppFooter></AppFooter>
@@ -43,4 +53,9 @@ export default {
 
 <style lang="scss">
 @use '../style/general.scss';
+
+.home-hide {
+  display: none;
+}
+
 </style>
