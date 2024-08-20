@@ -222,7 +222,7 @@ export default {
 
     .home-adaptation .header-navbar {
             &.visible {
-                background-color: variables.$color-shade;
+                background-color: variables.$color-b;
             }
     }
     
