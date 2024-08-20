@@ -74,4 +74,15 @@ export default {
     left: 0;
     right: 0;
 }
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+.service-card.col-4 {
+    width: 100%;
+}
+
+}
+
 </style>

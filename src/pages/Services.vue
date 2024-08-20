@@ -47,4 +47,14 @@ import CardService from '../components/CardService.vue';
     padding: 0 40px 50px 40px;
 }
 
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .service-container-overflow {
+        height: calc(100vh - 100px);
+    }
+
+}
+
 </style>
