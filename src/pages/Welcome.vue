@@ -5,10 +5,10 @@ export default {
 
 <template>
 
-    <div class="app-container">
+    <div class="app-container welcom-scroll">
             
         <section>
-            <div class="row">
+            <div class="row welcome-phone">
                 <div class="col-6 text-welcome gap-md row-col">
                     <h1 class="title">{{ $t("welcome-page") }}</h1>
                     <div class="row-col gap-sm">
@@ -46,6 +46,28 @@ export default {
 .text-welcome {
     padding: 50px;
     color: variables.$color-w;
+}
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .welcome-phone {
+        flex-direction: column;
+    }
+
+    .app-container.welcom-scroll {
+        overflow: auto;
+    }
+
+    .welcome-phone .col-6 {
+        width: 100%;
+    }
+
+    .img-welcome {
+        height: 480px;
+    }
+
 }
 
 </style>
