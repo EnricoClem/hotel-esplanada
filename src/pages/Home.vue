@@ -30,6 +30,7 @@ export default {
     background-image: url(../assets/FONDALE_hompage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
     display: flex;
 }
@@ -41,6 +42,21 @@ export default {
 
 .home-logo-text {
     filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
+}
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .home-logo {
+        width: 100%;
+        margin-top: 50%;
+    }
+
+    .home-logo img {
+        width: 70%;
+    }
+
 }
 
 </style>
