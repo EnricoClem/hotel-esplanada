@@ -28,7 +28,7 @@ export default {
 <template>
     <footer :class="headerClass">
         <div class="footer-container">
-            <div class="row align">
+            <div class="row align footer-phone">
                 <!-- TITLE -->
                 <div class="col-3">
                     <h3>Grand Hotel Esplanada</h3>
@@ -156,6 +156,46 @@ export default {
 
 .home-adaptation .social-foot-hover {
     filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
+}
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .footer-container {
+        padding: 16px 25px;
+        height: 100%;
+        // più 32px su smarthphone
+    }
+
+    .footer-container .col-6 {
+        width: 100%;
+    }
+
+    .footer-container .col-3 {
+        width: 100%;
+    }
+
+    .footer-phone {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-container .justify-end {
+        justify-content: center;
+    }
+
+    .home-adaptation footer {
+        position: relative;
+    }
+
+    .home-adaptation .footer-container {
+        height: fit-content;
+    }
+
 }
 
 </style>
