@@ -57,16 +57,16 @@ export default {
 </script>
 
 <template>
-  <div class="app-container">
-    <section>
-      <div class="row">
+  <div class="app-container info-scroll">
+    <section class="info-section">
+      <div class="row info-row-phone">
         <div class="col-6 img-info">
             <img src="../assets/img-info.jpg" alt="">
         </div>
         <div class="col-6 text-info gap-md row-col">
             <h1 class="title">{{ $t("info-page") }}</h1>
             <div class="row-col between gap-md data-info-height">
-                <div class="row between">
+                <div class="row between ">
                     <div class="row-col col-info-text gap-md">
                         <p class="secondary-title">Grand Hotel Esplanada</p>
                         <p>Via delle Dune 6 - 30028<br>Bibione Pineda VE Italy</p>
@@ -129,6 +129,38 @@ export default {
 
 .data-info-height {
     height: 86%;
+}
+
+
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .app-container.info-scroll {
+        overflow: auto;
+    }
+
+    .info-section .col-6 {
+        width: 100%;
+    }
+
+    .info-row-phone {
+        flex-direction: column-reverse;
+    }
+
+    .data-info-height {
+        flex-direction: row;
+    }
+
+    .img-info {
+        height: 400px;
+    }
+
+    .img-info img {
+        object-fit: cover;
+        width: auto;
+    }
+
 }
 
 </style>
