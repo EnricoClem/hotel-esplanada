@@ -71,4 +71,26 @@ import CardRoom from '../components/CardRoom.vue';
     width: 100%;
 }
 
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+    .card-container .col-4 {
+        width: 100%;
+    }
+
+    .rooms-container {
+        height: calc(100vh - 100px);
+    }
+
+    .img-rooms-layout {
+        display: none;
+    }
+
+    .rooms-container.col-10 {
+        width: 100%;
+    }
+
+}
+
 </style>

@@ -109,4 +109,27 @@ export default {
     cursor: pointer;
 }
 
+/* Media query SMARTPHONE ____________________________________________________________ */
+
+@media screen and (max-width: 480px) {
+
+  .popup-content {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .popup {
+    padding: 3vh;
+  }
+
+  .card-room-img-popup.col-8 {
+    width: 100%;
+  }
+
+  .room-description-box.col-4 {
+    width: 100%;
+  }
+
+}
+
 </style>
