@@ -13,7 +13,8 @@ export default {
 
             <div class="home-logo row-col align justify-center">
                 
-                <LogoAnimation />
+                <!-- <LogoAnimation /> -->
+                <img src="../assets/espl-LOGO-01.svg" alt="" class="home-logo-icon">
     
                 <img src="../assets/espl-LOGO-03.svg" alt="" class="home-logo-text">
 
@@ -40,6 +41,11 @@ export default {
     margin: auto;
 }
 
+.home-logo-icon {
+    filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
+    width: 60%;
+}
+
 .home-logo-text {
     filter: invert(97%) sepia(3%) saturate(11%) hue-rotate(37deg) brightness(102%) contrast(105%);
 }
@@ -54,7 +60,7 @@ export default {
     }
 
     .home-logo img {
-        width: 70%;
+        width: 50%;
     }
 
 }
