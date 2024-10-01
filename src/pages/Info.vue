@@ -61,7 +61,7 @@ export default {
     <section class="info-section">
       <div class="row info-row-phone">
         <div class="col-6 img-info">
-            <img src="../assets/img-info.jpg" alt="">
+            <img src="@/assets/img-info.jpg" alt="info">
         </div>
         <div class="col-6 text-info gap-md row-col">
             <h1 class="title">{{ $t("info-page") }}</h1>
