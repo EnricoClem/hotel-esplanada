@@ -9,7 +9,7 @@ export default {
     computed: {
         backgroundImageStyle() {
             return {
-                backgroundImage: `url(public/${this.item.image})`
+                backgroundImage: `url(/assets/${this.item.image})`
             };
         }
     }

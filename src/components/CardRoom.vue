@@ -37,7 +37,7 @@ export default {
                 <p class="caption" v-else>{{ $t("rooms-persons-1") }}{{ item.persons }}{{ $t("rooms-persons-3") }}</p>
             </div>
             <div class="card-room-img">
-                <img class="room-cover" :src="`/public/${ item.cover }`" alt="">
+                <img class="room-cover" :src="`/assets/${ item.cover }`" alt="">
                 <img class="zoom-icon" src="../assets/zoom-icon.svg" alt="">
             </div>
         </a>
