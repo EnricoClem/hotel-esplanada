@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Rive } from '@rive-app/canvas';
-import waveLogo from '../assets/wave-logo.riv';
+import waveLogo from '/assets/wave-logo.riv';
 
 export default defineComponent({
     name: 'RiveComponent',
