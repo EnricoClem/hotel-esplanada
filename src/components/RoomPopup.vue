@@ -23,7 +23,7 @@ export default {
     <div class="popup-content row">
       <!-- IMMAGINE -->
       <div class="card-room-img-popup col-8">
-          <img class="room-cover-popup" :src="`/assets/${ item.cover }`" alt="">
+          <img class="room-cover-popup" :src="`${ item.cover }`" alt="">
       </div>
       <!-- DATI -->
       <div class="room-description-box col-4 row between">

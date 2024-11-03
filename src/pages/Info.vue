@@ -66,7 +66,7 @@ export default {
         <div class="col-6 text-info gap-md row-col">
             <h1 class="title">{{ $t("info-page") }}</h1>
             <div class="row-col between gap-md data-info-height">
-                <div class="row between ">
+                <div class="row between info-data-box">
                     <div class="row-col col-info-text gap-md">
                         <p class="secondary-title">Grand Hotel Esplanada</p>
                         <p>Via delle Dune 6 - 30028<br>Bibione Pineda VE Italy</p>
@@ -159,6 +159,18 @@ export default {
     .img-info img {
         object-fit: cover;
         width: auto;
+    }
+
+    .col-info-text {
+        width: 100%;
+    }
+
+    .info-data-box {
+        gap: 15px;
+    }
+
+    .text-info {
+        height: auto;
     }
 
 }
