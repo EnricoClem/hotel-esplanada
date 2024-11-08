@@ -21,7 +21,7 @@ export default {
         <li class="service-card col-4">
             <div class="service-card-layout" :style="backgroundImageStyle">
                 <p class="secondary-title">{{ $t(item.name) }}</p>
-                <div class="text-box">
+                <div class="text-box scrollable-content">
                     <p class="service-description" v-if="item.text !== '' ">{{ $t(item.text) }}</p>
                 </div>
             </div>

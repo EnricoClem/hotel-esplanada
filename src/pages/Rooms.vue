@@ -22,7 +22,7 @@ import CardRoom from '../components/CardRoom.vue';
             <div class="row between">
                 <div class="rooms-container col-10 row-col">
                     <h1 class="rooms-title-container title">{{ $t("rooms-page") }}</h1>
-                    <div class="rooms-card-container">
+                    <div class="rooms-card-container scrollable-content">
                         <ul class="card-container row">
                             <CardRoom v-for="room in store.allRooms" :key="room.id" :item="room"/>
                         </ul>
