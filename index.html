@@ -10,13 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
     <title>Hotel Esplanada</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GN4TVR41E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
     
-      gtag('config', 'G-5GN4TVR41E');
+    <!-- Google Analytics - Carica solo se il consenso è dato -->
+    <script>
+      window.addEventListener('load', function() {
+        window.addEventListener('osano:consent', function(event) {
+          if (event.detail && event.detail.status === 'accepted') {
+            // Inizializza Google Analytics
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-5GN4TVR41E";
+            document.head.appendChild(script);
+
+            script.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5GN4TVR41E', { 'anonymize_ip': true });
+            };
+          }
+        });
+      });
     </script>
   </head>
   <body>
