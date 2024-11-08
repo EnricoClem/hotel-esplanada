@@ -181,7 +181,7 @@ export default {
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .footer-container .justify-end {
@@ -194,6 +194,40 @@ export default {
 
     .home-adaptation .footer-container {
         height: fit-content;
+    }
+
+    footer .caption {
+        font-size: 8px;
+    }
+
+    .social-foot {
+        width: 20px;
+        right: 0px;
+    }
+
+    .social-foot-hover {
+        width: 20px;
+    }
+
+    .wtsp-btn {
+        padding: 5px 35px 5px 5px;
+    }
+
+    .wtsp-btn .social-foot {
+        width: 18px;
+        right: 8px;
+        top: 7.5px;
+    }
+
+    .wtsp-btn .social-foot-hover {
+        width: 18px;
+        right: 8px;
+        top: 7.5px;
+    }
+
+    .hover-container {
+        width: 20px;
+        height: 20px;
     }
 
 }

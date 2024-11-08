@@ -13,10 +13,10 @@ export default {
 
             <div class="home-logo row-col align justify-center">
                 
-                <!-- <LogoAnimation /> -->
-                <img src="../assets/espl-LOGO-01.svg" alt="" class="home-logo-icon">
+                <LogoAnimation />
+                <!-- <img src="../assets/espl-LOGO-01.svg" alt="" class="home-logo-icon">
     
-                <img src="../assets/espl-LOGO-03.svg" alt="" class="home-logo-text">
+                <img src="../assets/espl-LOGO-03.svg" alt="" class="home-logo-text"> -->
 
             </div>
 

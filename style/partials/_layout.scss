@@ -112,6 +112,16 @@
     font-weight: 400;
 }
 
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
 /* Media query SMARTPHONE ____________________________________________________________ */
 
 @media screen and (max-width: 480px) {
