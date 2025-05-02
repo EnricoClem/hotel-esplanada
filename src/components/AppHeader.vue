@@ -57,10 +57,6 @@ export default {
                         <p>{{ $t('welcome') }}</p>
                         <div :class="isActive('/welcome')"></div>
                     </RouterLink>
-                    <a class="route-btn align" href="https://be.bookingexpert.it/book/simple/step1?hotel=15184&lang=it&nsid=4dfd743e-a1b8-4634-96fc-e5993c294fe0">
-                        <p>{{ $t('booking') }}</p>
-                        <div class="underline"></div>
-                    </a>
                     <RouterLink to="/rooms" class="route-btn align" @click="toggleMenu">
                         <p>{{ $t('room') }}</p>
                         <div :class="isActive('/rooms')"></div>

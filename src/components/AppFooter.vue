@@ -1,11 +1,16 @@
 <script>
 import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
 
 export default {
-    setup() {
+  components: {
+    RouterLink
+  },
+  setup() {
     const route = useRoute();
+    const requestQuoteUrl = ref('/request-quote');
+    const widgetKey = ref(0);
 
     const headerClass = computed(() => {
       const path = route.path;
@@ -20,10 +25,95 @@ export default {
       return route.path === linkPath ? 'underline-current-page' : 'underline';
     };
 
-    return { headerClass, isActive };
+    const isRequestQuotePage = computed(() => {
+      return route.path === '/request-quote';
+    });
+
+    return { headerClass, isActive, requestQuoteUrl, isRequestQuotePage };
   },
+  data() {
+    return {
+      language: this.$t("widget-lang"),
+      requestQuoteText: this.$t('request-quote')
+    };
+  },
+  mounted() {
+    this.initSimpleBooking();
+  },
+  methods: {
+    initSimpleBooking() {
+      const currentLanguage = this.$t("widget-lang");
+      (function (i, s, o, g, r, a, m) {
+        i['SBSyncroBoxParam'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        },
+          i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://cdn.simplebooking.it/search-box-script.axd?IDA=10557', 'SBSyncroBox');
+
+      SBSyncroBox({
+        CodLang: currentLanguage,
+        Reference: "sbSyncroBox",
+        Styles: {
+          FontFamily: 'Jost, Helvetica, sans-serif',
+          Theme: "dark",
+          CustomBGColor: "#1a1a1a",
+          CustomBodyBGColor: "#d7a40a",
+          CustomLabelColor: "d7a40a",
+          CustomWidgetColor: "#d7a40a",
+          CustomFieldBackgroundColor: "#1a1a1a",
+          CustomButtonColor: "#ffffff",
+          CustomButtonBGColor: "#ca9a22",
+          CustomLinkColor: "#d7a40a",
+          CustomIconColor: "#d7a40a",
+          CustomBorderColor: "#d7a40a",
+          CustomIntentSelectionColor: "1a1a1a",
+          CustomButtonHoverBGColor: "#9d7600",
+          CustomLinkHoverColor: "#9d7600",
+          CustomButtonHoverBGColor: "#9d7600",
+        }
+      });
+    }
+  },
+  watch: {
+    '$i18n.locale'(newLocale) {
+      this.initSimpleBooking();
+        this.requestQuoteText = this.$t('request-quote');
+    },
+    'isRequestQuotePage'(newVal) {
+      if (!newVal) {
+        // Forza il re-rendering quando si esce dalla pagina del preventivo
+        this.initSimpleBooking();
+        //this.widgetKey++; // Incrementa la chiave per forzare il re-rendering
+      }
+    }
+  }
 }
 </script>
+
+<style scoped>
+/* Stili per il link "Richiedi Preventivo" */
+.request-quote-link {
+  margin: 10px auto;
+  display: inline-block;
+  background-color: #1a1a1a;
+  border: 1px white solid;
+  color: #ffffff; /* Assicurati che il testo sia leggibile */
+  padding: 10px 20px;
+  text-decoration: none; /* Rimuovi la sottolineatura predefinita */
+  border-radius: 5px; /* Bordi arrotondati */
+}
+
+.request-quote-link:hover {
+    background-color: #333; /* Cambia il colore al passaggio del mouse */
+    color: #ddd;
+}
+</style>
 
 <template>
     <footer :class="headerClass">
@@ -66,11 +156,49 @@ export default {
             </div>
         </div>
     </footer>
+
+    <div class="footer-widget">
+        <div id="sb-container" v-if="!isRequestQuotePage"></div>
+        <RouterLink v-if="!isRequestQuotePage" to="request-quote" class="request-quote-link">
+            {{ requestQuoteText }}
+        </RouterLink>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
 
 @use '../style/partials/variables';
+
+.footer-widget {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  z-index: 100;
+  background-color: #1a1a1a;
+}
+
+.request-quote-link {
+  margin: 10px auto;
+  display: inline-block;
+  background-color: #1a1a1a;
+  border: none;
+  border: 0.5px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.request-quote-link:hover {
+    background-color: #9d7600;
+    border: 0.5px solid #9d7600;
+    color: #ddd;
+    transition: 0.2s;
+}
 
 .footer-container {
     background-color: variables.$color-b;
