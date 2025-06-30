@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cmp.osano.com/169y0cUTWpsYR1W1S/9c1b2ed0-60a9-4e37-9a82-30bb7a970f5b/osano.js"></script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="./assets/espl-ICON-Dp-PnHp1.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>Hotel Esplanada</title>
+
+    <!-- Inizializza Google Analytics solo dopo il consenso -->
+    <script>
+      window.addEventListener('load', function() {
+        window.addEventListener('osano:consent', function(event) {
+          if (event.detail && event.detail.status === 'accepted') {
+            // Carica il tag di Google Analytics solo dopo il consenso
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-5GN4TVR41E";
+            document.head.appendChild(script);
+
+            script.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5GN4TVR41E', { 'anonymize_ip': true });
+            };
+          }
+        });
+      });
+    </script>
+    <script type="module" crossorigin src="./assets/index-BI2rTVTd.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DR_T4zGi.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
