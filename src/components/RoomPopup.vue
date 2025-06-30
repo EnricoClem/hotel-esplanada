@@ -67,7 +67,7 @@ export default {
         <div v-if="item.gallery && item.gallery.length" class="swiper mySwiper">
           <div class="swiper-wrapper room-cover-popup">
             <div class="swiper-slide" v-for="(img, index) in item.gallery" :key="index">
-              <img :src="`./${img}`" :alt="`Slide ${index + 1}`" />
+              <img :src="`${ item.cover }`" :alt="`Slide ${index + 1}`" />
             </div>
           </div>
           <div class="swiper-button-next"></div>
@@ -75,7 +75,7 @@ export default {
         </div>
 
         <!-- Se NON c’è una gallery -->
-        <img v-else class="room-cover-popup" :src="`./${item.cover}`" alt="Cover image">
+        <img v-else class="room-cover-popup" :src="`${ item.cover }`" alt="Cover image">
       </div>
       <!-- DATI -->
       <div class="room-description-box col-4 row between">
