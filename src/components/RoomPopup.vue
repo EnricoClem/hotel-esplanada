@@ -1,4 +1,13 @@
 <script>
+import Swiper from 'swiper';
+import { Navigation, Mousewheel, Keyboard } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+Swiper.use([Navigation, Mousewheel, Keyboard]);
+
 export default {
   props: {
     item: {
@@ -13,6 +22,37 @@ export default {
   methods: {
     closePopup() {
       this.$emit('close');
+    },
+    initSwiper() {
+      this.$nextTick(() => {
+        if (this.item.gallery && this.item.gallery.length) {
+          const swiperEl = document.querySelector('.mySwiper');
+          if (swiperEl && !swiperEl.classList.contains('swiper-initialized')) {
+            new Swiper(".mySwiper", {
+              cssMode: true,
+              loop:true,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              mousewheel: true,
+              keyboard: true,
+            });
+          }
+        }
+      });
+    }
+  },
+  watch: {
+    visible(newVal) {
+      if (newVal) {
+        this.initSwiper();
+      }
+    }
+  },
+  mounted() {
+    if (this.visible) {
+      this.initSwiper();
     }
   }
 }
@@ -21,9 +61,21 @@ export default {
 <template>
   <div class="popup" v-if="visible">
     <div class="popup-content row">
-      <!-- IMMAGINE -->
+      <!-- IMMAGINE O GALLERY -->
       <div class="card-room-img-popup col-8">
-          <img class="room-cover-popup" :src="`${ item.cover }`" alt="">
+        <!-- Se c’è una gallery -->
+        <div v-if="item.gallery && item.gallery.length" class="swiper mySwiper">
+          <div class="swiper-wrapper room-cover-popup">
+            <div class="swiper-slide" v-for="(img, index) in item.gallery" :key="index">
+              <img :src="`/public/${img}`" :alt="`Slide ${index + 1}`" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Se NON c’è una gallery -->
+        <img v-else class="room-cover-popup" :src="`/public/${item.cover}`" alt="Cover image">
       </div>
       <!-- DATI -->
       <div class="room-description-box col-4 row between">
@@ -109,6 +161,32 @@ export default {
     cursor: pointer;
 }
 
+.swiper {
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: variables.$color-brand !important;
+}
+
 /* Media query SMARTPHONE ____________________________________________________________ */
 
 @media screen and (max-width: 480px) {
@@ -128,6 +206,10 @@ export default {
 
   .room-description-box.col-4 {
     width: 100%;
+  }
+
+  .swiper {
+    max-width: 100vw;
   }
 
 }

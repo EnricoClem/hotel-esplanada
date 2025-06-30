@@ -14,14 +14,16 @@ export const store = reactive({
             mq: "21 mq",
             balcony: ["6,80 mq", "rooms-chairs", "rooms-table", "rooms-drying-rack"],
             persons: "2-3",
-            cover: "room-classic.jpg",
+            cover: "room-classic-1.jpg",
+            gallery: ["room-classic-1.jpg", "room-classic-2.jpg", "room-classic-3.jpg", "room-classic-4.jpg"],
             services: ["rooms-bed", "rooms-bathroom", "rooms-clothes", "rooms-tv", "rooms-ac", "rooms-safe"]
         }, {
             name: "rooms-superior",
             mq: "21 mq",
             balcony: ["6,80 mq", "rooms-chairs", "rooms-table", "rooms-drying-rack"],
             persons: "2-3",
-            cover: "room-superior.jpg",
+            cover: "room-superior-1.jpg",
+            gallery: ["room-superior-1.jpg", "room-superior-2.jpg", "room-superior-3.jpg", "room-superior-4.jpg", "room-superior-5.jpg", "room-superior-6.jpg"],
             services: ["rooms-bed", "rooms-bathroom", "rooms-clothes", "rooms-tv", "rooms-ac", "rooms-safe"]
         }, {
             name: "rooms-fam-a",
@@ -42,7 +44,8 @@ export const store = reactive({
             mq: "26 mq",
             balcony: ["10 mq", "rooms-chairs", "rooms-table", "rooms-sun-lounger", "rooms-drying-rack"],
             persons: "2-4",
-            cover: "room-junior.jpg",
+            cover: "room-junior-1.jpg",
+            gallery: ["room-junior-1.jpg", "room-junior-2.jpg", "room-junior-3.jpg", "room-junior-4.jpg", "room-junior-5.jpg", "room-junior-6.jpg", "room-junior-7.jpg"],
             services: ["rooms-bed", "rooms-bathroom", "rooms-couch", "rooms-tv", "rooms-ac", "rooms-safe"]
         }, {
             name: "rooms-pan",
