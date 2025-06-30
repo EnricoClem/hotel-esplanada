@@ -67,7 +67,7 @@ export default {
         <div v-if="item.gallery && item.gallery.length" class="swiper mySwiper">
           <div class="swiper-wrapper room-cover-popup">
             <div class="swiper-slide" v-for="(img, index) in item.gallery" :key="index">
-              <img :src="`${ item.cover }`" :alt="`Slide ${index + 1}`" />
+              <img :src="`${img}`" :alt="`Slide ${index + 1}`" />
             </div>
           </div>
           <div class="swiper-button-next"></div>
